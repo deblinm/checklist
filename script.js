@@ -1,8 +1,8 @@
-var button = document.getElementById("enter");
-var input = document.getElementById("userinput");
+var button = document.getElementById("btn");
+var input = document.getElementById("textip");
 var ul = document.querySelector("ul");
-
 var myNodelist = document.getElementsByTagName("LI");
+
 var i;
 for (i = 0; i < myNodelist.length; i++) {
   var span = document.createElement("SPAN");
@@ -21,9 +21,9 @@ function createListElement() {
 	var li = document.createElement("li");
 	li.appendChild(document.createTextNode(input.value));
 	ul.appendChild(li);
-	input.value = "";
-
-	var span = document.createElement("SPAN");
+    input.value = "";
+    
+    var span = document.createElement("SPAN");
   	var txt = document.createTextNode("\u00D7");
   		span.className = "close";
   		span.appendChild(txt);
@@ -46,7 +46,8 @@ function addListAfterClick() {
 function addListAfterKeypress(event) {
 	if (inputLength() > 0 && event.keyCode === 13) {
 		createListElement();
-	}
+    }
+    
 }
 
 function toggleList(event){
@@ -68,8 +69,6 @@ for (i = 0; i < close.length; i++) {
 
 
 
-button.addEventListener("click", addListAfterClick);
-
-input.addEventListener("keypress", addListAfterKeypress);
-
-ul.addEventListener("click",toggleList);
+  button.addEventListener("click", addListAfterClick);
+  input.addEventListener("keypress", addListAfterKeypress);
+  ul.addEventListener("click",toggleList);
